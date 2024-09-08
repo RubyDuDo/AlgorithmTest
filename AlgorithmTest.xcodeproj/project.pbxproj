@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC7B2C8E4FC700135709 /* main.cpp */; };
+		BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC852C8E520700135709 /* DoubleLink.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		BE87DC782C8E4FC700135709 /* AlgorithmTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE87DC7B2C8E4FC700135709 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BE87DC852C8E520700135709 /* DoubleLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleLink.cpp; sourceTree = "<group>"; };
+		BE87DC862C8E520700135709 /* DoubleLink.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DoubleLink.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,27 @@
 		BE87DC7A2C8E4FC700135709 /* AlgorithmTest */ = {
 			isa = PBXGroup;
 			children = (
+				BE87DC832C8E518400135709 /* DataStructure */,
+				BE87DC822C8E517C00135709 /* Sort */,
 				BE87DC7B2C8E4FC700135709 /* main.cpp */,
 			);
 			path = AlgorithmTest;
+			sourceTree = "<group>";
+		};
+		BE87DC822C8E517C00135709 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		BE87DC832C8E518400135709 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				BE87DC852C8E520700135709 /* DoubleLink.cpp */,
+				BE87DC862C8E520700135709 /* DoubleLink.hpp */,
+			);
+			path = DataStructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */,
 				BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

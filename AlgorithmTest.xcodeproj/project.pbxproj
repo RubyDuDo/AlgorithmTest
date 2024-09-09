@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC7B2C8E4FC700135709 /* main.cpp */; };
 		BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC852C8E520700135709 /* DoubleLink.cpp */; };
+		BE87DC8A2C8E776500135709 /* Hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC882C8E776500135709 /* Hash.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		BE87DC7B2C8E4FC700135709 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BE87DC852C8E520700135709 /* DoubleLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleLink.cpp; sourceTree = "<group>"; };
 		BE87DC862C8E520700135709 /* DoubleLink.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DoubleLink.hpp; sourceTree = "<group>"; };
+		BE87DC882C8E776500135709 /* Hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hash.cpp; sourceTree = "<group>"; };
+		BE87DC892C8E776500135709 /* Hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Hash.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 			children = (
 				BE87DC852C8E520700135709 /* DoubleLink.cpp */,
 				BE87DC862C8E520700135709 /* DoubleLink.hpp */,
+				BE87DC882C8E776500135709 /* Hash.cpp */,
+				BE87DC892C8E776500135709 /* Hash.hpp */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE87DC8A2C8E776500135709 /* Hash.cpp in Sources */,
 				BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */,
 				BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */,
 			);

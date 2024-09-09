@@ -40,6 +40,7 @@ public:
     
 public:
     DLink() = default;
+    ~DLink();
     DLink(std::initializer_list<int> list );
     //search
     int getSize();

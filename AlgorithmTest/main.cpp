@@ -8,12 +8,15 @@
 #include <iostream>
 
 #include "DataStructure/DoubleLink.hpp"
+#include "DataStructure/Hash.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
-    testDLink();
+//    testDLink();
+    
+    testHash();
     
     return 0;
 }

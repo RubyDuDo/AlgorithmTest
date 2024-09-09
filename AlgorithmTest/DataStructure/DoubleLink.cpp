@@ -27,6 +27,11 @@ DLink::DLink(std::initializer_list<int> list )
     
 }
 
+DLink::~DLink()
+{
+    clear();
+}
+
 int DLink::getSize()
 {
     return m_size;

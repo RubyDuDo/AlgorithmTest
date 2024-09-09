@@ -9,6 +9,7 @@
 
 #include "DataStructure/DoubleLink.hpp"
 #include "DataStructure/Hash.hpp"
+#include "Problems/ArraysAndStrings/Unique.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -16,7 +17,8 @@ int main(int argc, const char * argv[]) {
     
 //    testDLink();
     
-    testHash();
+//    testHash();
     
+    testIsUnique();
     return 0;
 }

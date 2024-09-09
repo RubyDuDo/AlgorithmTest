@@ -10,6 +10,7 @@
 		BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC7B2C8E4FC700135709 /* main.cpp */; };
 		BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC852C8E520700135709 /* DoubleLink.cpp */; };
 		BE87DC8A2C8E776500135709 /* Hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC882C8E776500135709 /* Hash.cpp */; };
+		BE87DC8F2C8EB85F00135709 /* Unique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC8D2C8EB85F00135709 /* Unique.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		BE87DC862C8E520700135709 /* DoubleLink.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DoubleLink.hpp; sourceTree = "<group>"; };
 		BE87DC882C8E776500135709 /* Hash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hash.cpp; sourceTree = "<group>"; };
 		BE87DC892C8E776500135709 /* Hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Hash.hpp; sourceTree = "<group>"; };
+		BE87DC8D2C8EB85F00135709 /* Unique.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Unique.cpp; sourceTree = "<group>"; };
+		BE87DC8E2C8EB85F00135709 /* Unique.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Unique.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		BE87DC7A2C8E4FC700135709 /* AlgorithmTest */ = {
 			isa = PBXGroup;
 			children = (
+				BE87DC8B2C8EB62600135709 /* Problems */,
 				BE87DC832C8E518400135709 /* DataStructure */,
 				BE87DC822C8E517C00135709 /* Sort */,
 				BE87DC7B2C8E4FC700135709 /* main.cpp */,
@@ -86,6 +90,23 @@
 				BE87DC892C8E776500135709 /* Hash.hpp */,
 			);
 			path = DataStructure;
+			sourceTree = "<group>";
+		};
+		BE87DC8B2C8EB62600135709 /* Problems */ = {
+			isa = PBXGroup;
+			children = (
+				BE87DC8C2C8EB63200135709 /* ArraysAndStrings */,
+			);
+			path = Problems;
+			sourceTree = "<group>";
+		};
+		BE87DC8C2C8EB63200135709 /* ArraysAndStrings */ = {
+			isa = PBXGroup;
+			children = (
+				BE87DC8D2C8EB85F00135709 /* Unique.cpp */,
+				BE87DC8E2C8EB85F00135709 /* Unique.hpp */,
+			);
+			path = ArraysAndStrings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +168,7 @@
 			files = (
 				BE87DC8A2C8E776500135709 /* Hash.cpp in Sources */,
 				BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */,
+				BE87DC8F2C8EB85F00135709 /* Unique.cpp in Sources */,
 				BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

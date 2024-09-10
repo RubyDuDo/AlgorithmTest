@@ -67,6 +67,42 @@ public:
     
 };
 
+//DLink with sentinal
+class DSLink
+{
+public:
+    DLinkNode m_head;
+    int m_size;
+    
+public:
+    DSLink();
+    ~DSLink();
+    DSLink(std::initializer_list<int> list );
+    //search
+    int getSize();
+    DLinkNode* find( int key );
+    DLinkNode* getTail();
+    
+    //insert
+    void insertAtHead( int key );
+    void insertAtTail( int key );
+    void insertAfter( int key, DLinkNode* otherNode );
+    
+    //delete
+    void deleteKey( int key );
+    void deleteNode( DLinkNode* node );
+    
+    
+    //other
+    void reserve();
+    void combine( DSLink& other );
+    void clear();
+    
+    //debug
+    void print();
+    
+};
+
 void testDLink();
 
 #endif /* DoubleLink_hpp */

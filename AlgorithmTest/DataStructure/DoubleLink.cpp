@@ -213,7 +213,7 @@ void testDLink()
 {
     //test init
     cout<<"Test Init"<<endl;
-    DLink link = {1,5,3};
+    DSLink link = {1,5,3};
     link.print();
     
     //test add
@@ -231,8 +231,8 @@ void testDLink()
     link.print();
     
     cout<<"Test Combine"<<endl;
-    DLink link2 = { 9, 7, 5 };
-    DLink link3 = {};
+    DSLink link2 = { 9, 7, 5 };
+    DSLink link3 = {};
     
     link.combine( link2 );
     link.print();
@@ -244,5 +244,166 @@ void testDLink()
     link.print();
     link3.print();
     
+    
+}
+
+DSLink::DSLink()
+{
+    m_size = 0;
+    m_head.m_prev = &m_head;
+    m_head.m_next = &m_head;
+}
+
+DSLink::~DSLink()
+{
+    clear();
+}
+
+DSLink::DSLink(std::initializer_list<int> list ):DSLink()
+{
+    for(auto it = list.begin(); it != list.end(); ++it )
+    {
+        insertAtTail( *it );
+    }
+}
+
+//search
+int DSLink::getSize()
+{
+    return m_size;
+}
+
+DLinkNode* DSLink::find( int key )
+{
+    m_head.m_key = key;
+    auto p = m_head.m_next;
+    while( true )
+    {
+        if( p->m_key == key )
+        {
+            break;
+        }
+        else{
+            p = p->m_next;
+        }
+    }
+    
+    if( p == &m_head )
+    {
+        return nullptr;
+    }
+    else{
+        return p;
+    }
+    
+}
+DLinkNode* DSLink::getTail()
+{
+    return m_head.m_prev;
+}
+
+//insert
+void DSLink::insertAtHead( int key )
+{
+    auto node = new DLinkNode(key);
+    insertAfter( key, &m_head );
+    
+}
+
+void DSLink::insertAtTail( int key )
+{
+    insertAfter( key, m_head.m_prev );
+    
+}
+void DSLink::insertAfter( int key, DLinkNode* otherNode )
+{
+    auto node = new DLinkNode(key);
+    
+    otherNode->m_next->m_prev = node;
+    node->m_next = otherNode->m_next;
+    
+    otherNode->m_next = node;
+    node->m_prev = otherNode;
+    m_size++;
+}
+
+//delete
+void DSLink::deleteKey( int key )
+{
+    auto node = find( key );
+    deleteNode( node );
+    
+}
+void DSLink::deleteNode( DLinkNode* node )
+{
+    if( node == nullptr )
+        return;
+    
+    node->m_prev->m_next = node->m_next;
+    node->m_next->m_prev = node->m_prev;
+    
+    m_size--;
+}
+
+
+//other
+void DSLink::reserve()
+{
+    auto p = m_head.m_next;
+    while( p != &m_head )
+    {
+        std::swap( p->m_prev, p->m_next );
+    }
+    
+    std::swap( m_head.m_prev, m_head.m_next );
+    
+}
+void DSLink::combine( DSLink& other )
+{
+    if( other.getSize() == 0 )
+    {
+        return;
+    }
+    else if( getSize() == 0 )
+    {
+        m_head = other.m_head;
+    }
+    
+    m_head.m_prev->m_next = other.m_head.m_next;
+    other.m_head.m_next->m_prev = m_head.m_prev;
+    
+    other.m_head.m_prev->m_next = &m_head;
+    m_head.m_prev = other.m_head.m_prev;
+    
+    m_size += other.m_size;
+    other.m_head.m_prev = &other.m_head;
+    other.m_head.m_next = &other.m_head;
+    other.m_size = 0;
+}
+
+
+void DSLink::clear()
+{
+    for( auto p = m_head.m_next; p != &m_head; )
+    {
+        auto pNext = p->m_next;
+        delete p;
+        p = pNext;
+    }
+    
+    m_head.m_prev = &m_head;
+    m_head.m_next = &m_head;
+    
+    m_size = 0;
+}
+
+void DSLink::print()
+{
+    cout<<"DLink("<<m_size<<"):";
+    for( auto p = m_head.m_next; p != &m_head; p = p->m_next )
+    {
+        cout<<p->m_key<<",";
+    }
+    cout<<endl;
     
 }

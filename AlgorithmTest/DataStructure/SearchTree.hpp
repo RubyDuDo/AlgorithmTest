@@ -37,9 +37,12 @@ public:
     BTreeNode* m_root = nullptr;
     
     CSearchTree() = default;
-    
+
 public:
-    static void insert( BTreeNode** ppNode , int key );
+    void transplant( BTreeNode* u, BTreeNode* v);
+    
+    void insert(  int key );
+    BTreeNode* remove( int key );
     static int getMin( BTreeNode* node );
     static int getMax(BTreeNode* node );
     

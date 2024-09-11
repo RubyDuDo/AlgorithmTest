@@ -7,42 +7,96 @@
 
 #include "SearchTree.hpp"
 
-void CSearchTree::insert( BTreeNode** ppNode , int key )
+void CSearchTree::insert(  int key )
 {
     auto p = new BTreeNode( key );
-    if( *ppNode == nullptr )
+    if( m_root == nullptr )
     {
-        *ppNode = p;
+        m_root = p;
         return;
     }
     
-    auto pParent = *ppNode;
-    while( true )
+    auto pParent = m_root;
+    auto pCur = m_root;
+    while( pCur != nullptr )
     {
-        if( key <= pParent->m_key )
+        pParent = pCur;
+        if( key <= pCur->m_key )
         {
-            if( pParent->m_left == nullptr )
-            {
-                pParent->m_left = p;
-                p->m_parent = pParent;
-                break;
-            }
-            else{
-                pParent = pParent->m_left;
-            }
+            pCur = pCur->m_left;
         }
         else{
-            if( pParent->m_right == nullptr )
-            {
-                pParent->m_right = p;
-                p->m_parent = pParent;
-                break;
-            }
-            else{
-                pParent = pParent->m_right;
-            }
+            pCur = pCur->m_right;
         }
     }
+    
+    if( key < pParent->m_key )
+    {
+        pParent->m_left = p;
+    }
+    else{
+        pParent->m_right = p;
+    }
+    
+    p->m_parent = pParent;
+    
+}
+
+void CSearchTree::transplant( BTreeNode* u, BTreeNode* v)
+{
+    if( u->m_parent == nullptr )
+    {
+        m_root = v;
+        v->m_parent = nullptr;
+        return;
+    }
+    else if( u == u->m_parent->m_left )
+    {
+        u->m_parent->m_left = v;
+    }
+    else{
+        u->m_parent->m_right = v;
+    }
+    
+    if( v != nullptr )
+    {
+        v->m_parent = u->m_parent;
+    }
+    
+    u->m_parent = nullptr;
+    
+    //todo: clear u
+    
+}
+
+BTreeNode* CSearchTree::remove( int key )
+{
+    auto z = search( m_root,  key );
+    if( !z ) return z;
+    
+    if( z->m_left == nullptr )
+    {
+        transplant( z, z->m_right);
+    }
+    else if( z->m_right == nullptr )
+    {
+        transplant( z , z->m_left );
+    }
+    else{
+        auto y = getMinNode( z->m_right );
+        if( y != z->m_right)
+        {
+            transplant( y,  y->m_right );
+            y->m_right = z->m_right;
+            y->m_right->m_parent = y;
+        }
+        transplant( z , y );
+        y->m_left = z->m_left;
+        y->m_left->m_parent = y;
+    }
+    
+    return z;
+    
 }
 
 BTreeNode* CSearchTree::getMinNode( BTreeNode* node )
@@ -295,13 +349,13 @@ void testSearchTree()
 {
     CSearchTree tree;
     
-    CSearchTree::insert( &tree.m_root, 10);
-    CSearchTree::insert( &tree.m_root, 4);
-    CSearchTree::insert( &tree.m_root, 17);
-    CSearchTree::insert( &tree.m_root, 1);
-    CSearchTree::insert( &tree.m_root, 5);
-    CSearchTree::insert( &tree.m_root, 16);
-    CSearchTree::insert( &tree.m_root, 21);
+    tree.insert(  10);
+    tree.insert(  4);
+    tree.insert(  17);
+    tree.insert( 1);
+    tree.insert(  5);
+    tree.insert( 16);
+    tree.insert(  21);
     
     std::vector<int> result;
     CSearchTree::inorderVisit( tree.m_root,  result);
@@ -331,6 +385,33 @@ void testSearchTree()
         cout<<"Find predecessor 1: Not exist"<<endl;
     }
     
+    
+//    result.clear();
+//    auto pr = tree.remove( 16);
+//    CSearchTree::inorderVisit( tree.m_root,  result);
+//    print(result,"Inorder");
+//    pr = tree.remove( 1);
+//    result.clear();
+//    CSearchTree::inorderVisit( tree.m_root,  result);
+//    print(result,"Inorder");
+    
+//    result.clear();
+//    auto pr = tree.remove( 4);
+//    CSearchTree::inorderVisit( tree.m_root,  result);
+//    print(result,"Inorder");
+//    pr = tree.remove( 17);
+//    result.clear();
+//    CSearchTree::inorderVisit( tree.m_root,  result);
+//    print(result,"Inorder");
+    
+    result.clear();
+    auto pr = tree.remove( 10);
+    CSearchTree::inorderVisit( tree.m_root,  result);
+    print(result,"Inorder");
+    pr = tree.remove( 21);
+    result.clear();
+    CSearchTree::inorderVisit( tree.m_root,  result);
+    print(result,"Inorder");
     
     
     

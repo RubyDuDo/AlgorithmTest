@@ -10,6 +10,7 @@
 #include "DataStructure/DoubleLink.hpp"
 #include "DataStructure/Hash.hpp"
 #include "Problems/ArraysAndStrings/Unique.hpp"
+#include "DataStructure/SearchTree.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -19,6 +20,8 @@ int main(int argc, const char * argv[]) {
     
 //    testHash();
     
-    testIsUnique();
+//    testIsUnique();
+    
+    testSearchTree();
     return 0;
 }

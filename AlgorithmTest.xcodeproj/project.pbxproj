@@ -11,6 +11,7 @@
 		BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC852C8E520700135709 /* DoubleLink.cpp */; };
 		BE87DC8A2C8E776500135709 /* Hash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC882C8E776500135709 /* Hash.cpp */; };
 		BE87DC8F2C8EB85F00135709 /* Unique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE87DC8D2C8EB85F00135709 /* Unique.cpp */; };
+		BEA62C802C9124530081B7C3 /* SearchTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEA62C7E2C9124530081B7C3 /* SearchTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		BE87DC892C8E776500135709 /* Hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Hash.hpp; sourceTree = "<group>"; };
 		BE87DC8D2C8EB85F00135709 /* Unique.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Unique.cpp; sourceTree = "<group>"; };
 		BE87DC8E2C8EB85F00135709 /* Unique.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Unique.hpp; sourceTree = "<group>"; };
+		BEA62C7E2C9124530081B7C3 /* SearchTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SearchTree.cpp; sourceTree = "<group>"; };
+		BEA62C7F2C9124530081B7C3 /* SearchTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SearchTree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				BE87DC862C8E520700135709 /* DoubleLink.hpp */,
 				BE87DC882C8E776500135709 /* Hash.cpp */,
 				BE87DC892C8E776500135709 /* Hash.hpp */,
+				BEA62C7E2C9124530081B7C3 /* SearchTree.cpp */,
+				BEA62C7F2C9124530081B7C3 /* SearchTree.hpp */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				BE87DC8A2C8E776500135709 /* Hash.cpp in Sources */,
 				BE87DC872C8E520700135709 /* DoubleLink.cpp in Sources */,
 				BE87DC8F2C8EB85F00135709 /* Unique.cpp in Sources */,
+				BEA62C802C9124530081B7C3 /* SearchTree.cpp in Sources */,
 				BE87DC7C2C8E4FC700135709 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

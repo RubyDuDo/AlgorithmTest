@@ -22,6 +22,8 @@ int main(int argc, const char * argv[]) {
     
 //    testIsUnique();
     
-    testSearchTree();
+//    testSearchTree();
+    
+    testArraysAndStrings();
     return 0;
 }

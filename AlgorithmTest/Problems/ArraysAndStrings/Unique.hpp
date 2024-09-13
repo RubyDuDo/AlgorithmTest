@@ -19,4 +19,18 @@ bool isUniqueNoAdd2( const std::string& str );
 
 void testIsUnique();
 
+//1.4
+bool isPalindromePemu( std::string& str );
+void testPalindromePemu();
+
+//1.5
+void isOneWay( std::string& left, std::string& right );
+void testIsOneWay();
+
+//1.6
+std::string stringCompression( std::string& str );
+void testStringCompression();
+
+void testArraysAndStrings();
+
 #endif /* Unique_hpp */
